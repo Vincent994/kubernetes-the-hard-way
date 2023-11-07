@@ -12,10 +12,12 @@ sed -e "s/^.*${HOSTNAME}.*/${ADDRESS} ${HOSTNAME} ${HOSTNAME}.local/" -i /etc/ho
 sed -e '/^.*ubuntu-jammy.*/d' -i /etc/hosts
 sed -e "/^.*$2.*/d" -i /etc/hosts
 
+#aggiunta master-3
 # Update /etc/hosts about other hosts
 cat >> /etc/hosts <<EOF
 ${NETWORK}.11  master-1
 ${NETWORK}.12  master-2
+${NETWORK}.13  master-3 
 ${NETWORK}.21  worker-1
 ${NETWORK}.22  worker-2
 ${NETWORK}.30  loadbalancer
